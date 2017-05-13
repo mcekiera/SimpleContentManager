@@ -16,7 +16,7 @@
     {block name=footer}{/block}
 
 
-    {block name=script}{/block}
-    <script src="../../assets/js/script.js"></script>
+    {block name=scripts}{/block}
+    <script src="assets/js/script.js"></script>
 </body>
 </html>

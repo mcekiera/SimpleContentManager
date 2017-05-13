@@ -14,6 +14,8 @@
 
 {block name=main}
     {include file="components/hero.tpl"}
+    {include file="components/about.tpl"}
+
 
 
 
@@ -24,6 +26,6 @@
     {include file="components/footer.tpl"}
 {/block}
 
-{block name=sripts}
+{block name=scripts}
     {include file="components/scripts.tpl"}
 {/block}

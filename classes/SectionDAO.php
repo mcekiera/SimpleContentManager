@@ -11,7 +11,7 @@ class SectionDAO
         $mysql = new MySQL();
         $res = $mysql->query('SELECT * FROM section');
         foreach ($res as $row) {
-            $this->data[$row['domid']] = $row;
+            $this->data[$row['id']] = $row;
         }
     }
 

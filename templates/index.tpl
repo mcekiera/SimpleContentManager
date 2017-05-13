@@ -20,12 +20,6 @@
     {include file="components/subscribe.tpl"}
     {include file="components/blog.tpl"}
     {include file="components/contact.tpl"}
-
-
-
-
-
-
 {/block}
 
 {block name=footer}

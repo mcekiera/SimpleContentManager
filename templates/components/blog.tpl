@@ -8,21 +8,21 @@
             <div class="col-xs-12">
                 <div id="js-blog-container" class="row">
                     <div class="col-sm-4">
-                        <div class="blog-entry" style="background-image: url(img/blog-1.png)">
+                        <div class="blog-entry" style="background-image: url('assets/img/blog-1.png')">
                             <p class="blog-entry__date"><span>20</span> nov</p>
                             <p class="blog-entry__title">Green Smoothies: Too Much of a Good Thing?</p>
                             <p class="blog-entry__stamp">By Auskteez - 2 hours ago</p>
                         </div>
                     </div>
                     <div class="col-sm-4">
-                        <div class="blog-entry" style="background-image: url(img/blog-2.png)">
+                        <div class="blog-entry" style="background-image: url('assets/img/blog-2.png')">
                             <p class="blog-entry__date"><span>14</span> nov</p>
                             <p class="blog-entry__title">Growing Food and a "Thirst" for Innovation</p>
                             <p class="blog-entry__stamp">By Auskteez - 3 hours ago</p>
                         </div>
                     </div>
                     <div class="col-sm-4">
-                        <div class="blog-entry" style="background-image: url(img/blog-3.png)">
+                        <div class="blog-entry" style="background-image: url('assets/img/blog-3.png')">
                             <p class="blog-entry__date"><span>10</span> nov</p>
                             <p class="blog-entry__title">Pesticides &amp; Food: What You Need to Know</p>
                             <p class="blog-entry__stamp">By Auskteez - 6 hours ago</p>

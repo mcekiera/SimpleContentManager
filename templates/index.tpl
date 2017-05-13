@@ -15,6 +15,9 @@
 {block name=main}
     {include file="components/hero.tpl"}
     {include file="components/about.tpl"}
+    {include file="components/services.tpl"}
+    {include file="components/gallery.tpl"}
+
 
 
 

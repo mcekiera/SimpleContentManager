@@ -1,16 +1,12 @@
-<head>
-    <title>Info</title>
-</head>
-<body>
+{extends file='layout/default.tpl'}
+
+{block name=title}
+    <title>Cahee</title>
+{/block}
+
+{block name=body}
 
 
-<h1>Test</h1>
 
-<ul>
-    {foreach from=$array item=$v}
-        <li>{$v}</li>
-    {/foreach}
-</ul>
 
-</body>
-</html>
+{/block}

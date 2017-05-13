@@ -4,9 +4,6 @@
     <title>Cahee</title>
 {/block}
 
-{block name=body}
-
-
-
-
+{block name=main}
+    {include file='components/header.tpl'}
 {/block}

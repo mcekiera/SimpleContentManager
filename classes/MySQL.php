@@ -31,8 +31,6 @@ class MySQL
             }
         }
 
-        var_dump($result);
-
         $conn->close();
         return $rows;
     }

@@ -1,7 +1,7 @@
 <div class="col-sm-4">
-    <div class="blog-entry" style="background-image: url({$blog['img']})">
-        <p class="blog-entry__date"><span>{$blog['day']}/span> {$blog['month']}</p>
-        <p class="blog-entry__title">{$blog['title']}</p>
-        <p class="blog-entry__stamp">By {$blog['author']} - <span class="blog-entry__counter"></span></p>
+    <div class="blog-entry" style="background-image: url({$entry['img']})">
+        <p class="blog-entry__date"><span>{$entry['day']}</span> {$entry['month']}</p>
+        <p class="blog-entry__title">{$entry['title']}</p>
+        <p class="blog-entry__stamp">By {$entry['author']} - {$entry['counter']}</p>
     </div>
 </div>

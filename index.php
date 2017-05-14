@@ -21,7 +21,7 @@ $smarty->setConfigDir('configs');
 $smarty->assign('CONFIG', $config);
 $smarty->assign('sections', $sections->getData());
 $smarty->assign('gallery', $gallery->getData());
-$smarty->assign('blog', $blog->getData());
+$smarty->assign('blog', array_slice($blog->getData(),0,3));
 
 $smarty->display('templates/index.tpl');
 

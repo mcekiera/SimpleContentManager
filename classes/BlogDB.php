@@ -39,7 +39,7 @@ class BlogDB
 
     private function hoursToSentence($hours) {
         $result = '';
-        if($hours == 1) {
+        if(intval($hours) <= 1) {
             $result = "1 hour ago";
         } elseif ($hours < 24) {
             $result = $hours." hours ago";

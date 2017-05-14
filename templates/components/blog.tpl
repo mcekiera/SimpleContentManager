@@ -9,13 +9,7 @@
                 <div id="js-blog-container" class="row">
 
                     {foreach $blog as $item}
-                    <div class="col-sm-4">
-                        <div class="blog-entry" style="background-image: url({$item['img']})">
-                            <p class="blog-entry__date"><span>{$item['day']}</span> {$item['month']}</p>
-                            <p class="blog-entry__title">{$item['title']}</p>
-                            <p class="blog-entry__stamp">By {$item['author']} - {$item['counter']}</p>
-                        </div>
-                    </div>
+                        {include file='components/blog-entry.tpl' entry=$item}
                     {/foreach}
 
                 </div>

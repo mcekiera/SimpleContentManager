@@ -1,15 +1,15 @@
 <?php
 
-include('MySQL.php');
-
-class SectionDAO
+class SectionDB
 {
     private $data;
 
     function __construct()
     {
         $mysql = new MySQL();
-        $res = $mysql->query('SELECT * FROM section');
+        $query = 'SELECT * FROM section';
+        $res = $mysql->query($query);
+
         foreach ($res as $row) {
             $this->data[$row['id']] = $row;
         }

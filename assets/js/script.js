@@ -61,60 +61,6 @@ $(document).ready(function () {
     }
 
     /**
-     * Execute given number of times publishArticle method.
-     * @param quantity of articles to add to HTML.
-     */
-    function publishRandomArticles(quantity) {
-        for(var i = 0; i < quantity; i += 1) {
-            var random = parseInt(Math.random() * 4999);
-            publishArticle(random);
-        }
-    };
-
-    /**
-     * Generates random date in hardcoded range, mocking real data.
-     * @returns {Date}
-     */
-    function randomDate() {
-        var start = new Date("2017-04-01");
-        var end = new Date();
-        return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
-    };
-
-    /**
-     * Creates DOM element with data retrieved with AJAX request.
-     * @param data from AJAX request.
-     * @returns {*|jQuery|HTMLElement}
-     */
-    function createArticle(data) {
-        var date = randomDate();
-        var dateStr = date.toDateString();
-        var article = $("<div class=col-sm-4></div>");
-        var day = Math.ceil((new Date() - date) / (1000 * 3600 * 24));
-        var ending = day == 1 ? ' day' : ' days';
-        var entry = $("<div class='blog-entry'></div>");
-        entry.css("background-image", "url(" + data.thumbnailUrl + ")");
-        entry.append("<p class='blog-entry__date'><span>" + dateStr.substr(8,2) + "</span>" + dateStr.substr(4,3) + "</p>");
-        entry.append("<p class='blog-entry__title'>" + data.title + "</p>");
-        entry.append("<p class='blog-entry__stamp'>By Auskteez - " + day + ending + " ago</p>");
-        article.append(entry);
-        return article;
-    };
-
-    /**
-     * Mocking function, imitates image retrieving by AJAX request.
-     */
-    function publishImages() {
-        var container = $("<div class='row'></div>");
-        var img = function() {
-            return $("<img class='img-responsive col-xs-6 col-xxs-12' src='http://placehold.it/350x250' alt='picture'>");
-        };
-        container.append(img());
-        container.append(img());
-        container.css("opacity","0");
-        container.appendTo($("#js-gallery"));
-        container.animate({opacity: "1"}, 1000);
-    }
 
     /**
      * Auto scroll triggered in menu.
@@ -136,20 +82,6 @@ $(document).ready(function () {
      */
     $('#js-hero-button').click(function () {
         autoScroll($(this).data('target'));
-    });
-
-    /**
-     * Read more action response
-     */
-    $("#js-blog-button").click(function () {
-        publishRandomArticles(3);
-    });
-
-    /**
-     * View more action response
-     */
-    $("#js-gallery-button").click(function () {
-        publishImages();
     });
 
 });

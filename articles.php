@@ -14,6 +14,8 @@ if($_REQUEST["q"]) {
     $quantity = intval($_REQUEST["q"]);
 }
 
+
+
 if($index && $quantity) {
     $result = array_slice($images, $index, $quantity);
 } elseif ($index) {

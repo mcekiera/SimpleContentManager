@@ -8,12 +8,12 @@
     </div>
     <div class="row">
         <div class="col-md-8">
-            <img class="img-responsive" src="{$gallery[0]['url']}" alt="{$gallery[0]['alt']}">
+            <img class="img-responsive gallery__img" src="{$gallery[0]['url']}" alt="{$gallery[0]['alt']}">
         </div>
         <div class="col-md-4">
             <div class="row">
-                <img class="img-responsive col-xs-6 col-md-12 col-xxs-12" src="{$gallery[1]['url']}" alt="{$gallery[1]['alt']}">
-                <img class="img-responsive col-xs-6 col-md-12 col-xxs-12" src="{$gallery[2]['url']}"
+                <img class="img-responsive gallery__img col-xs-6 col-md-12 col-xxs-12" src="{$gallery[1]['url']}" alt="{$gallery[1]['alt']}">
+                <img class="img-responsive gallery__img col-xs-6 col-md-12 col-xxs-12" src="{$gallery[2]['url']}"
                      alt="{$gallery[2]['alt']}">
             </div>
         </div>
@@ -21,9 +21,9 @@
     <div id="js-gallery-container" class="row">
 
         {if $gallery|count > 3 }
-            {foreach array_slice($gallery, 3) as $img}
+            {foreach array_slice($gallery, 3, 2) as $img}
 
-                <img class="img-responsive col-xs-6 col-xxs-12" src="{$img['url']}" alt="{$img['alt']}">
+                <img class="img-responsive gallery__img col-xs-6 col-xxs-12" src="{$img['url']}" alt="{$img['alt']}">
 
             {/foreach}
         {/if}

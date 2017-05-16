@@ -6,14 +6,16 @@ $(document).ready(function () {
      * Read more action response
      */
     $("#js-blog-button").click(function () {
-        addContent(blog, 3, 3, processArticles);
+        var q = $(".blog-entry").length;
+        addContent(blog, q, 3, processArticles);
     });
 
     /**
      * View more action response
      */
     $("#js-gallery-button").click(function () {
-        addContent(gallery, 5, 2, processImages);
+        var q = $(".gallery__img").length;
+        addContent(gallery, q, 2, processImages);
     });
 
     function fetchData(url, index, quantity, callback) {
@@ -49,6 +51,12 @@ $(document).ready(function () {
     function addImage(dataset) {
         var img = createImage(dataset);
         img.css("opacity","0");
+        img.css("width","585px");
+        img.css("height", "368px");
+        img.addClass("img-responsive");
+        img.addClass("gallery__img");
+        img.addClass(" col-xs-6");
+        img.addClass("col-xxs-12");
         img.appendTo($("#js-gallery-container"));
         img.animate({opacity: "1"}, 1000);
     }

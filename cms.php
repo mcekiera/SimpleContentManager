@@ -20,7 +20,7 @@ $smarty->setConfigDir('configs');
 
 $smarty->assign('sections', $sections->getData());
 $smarty->assign('gallery', $gallery->getRawData());
-$smarty->assign('blog', $blog->getData());
+$smarty->assign('blog', $blog->getRawData());
 
 $smarty->display('templates/cms.tpl');
 

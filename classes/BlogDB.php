@@ -4,14 +4,15 @@
 class BlogDB
 {
     private $data = [];
+    private $rawData = [];
 
     function __construct()
     {
         $mysql = new MySQL();
         $query = "SELECT * FROM blog ORDER BY timestamp DESC";
-        $result = $mysql->query($query);
+        $this->rawData = $mysql->query($query);
 
-        foreach ($result as $row) {
+        foreach ($this->rawData as $row) {
             $time = strtotime($row['timestamp']);
             $month = date("M",$time);
             $day = date('d', $time);
@@ -29,6 +30,13 @@ class BlogDB
 
     function getData() {
         return $this->data;
+    }
+
+    function getRawData() {
+        usort($this->rawData, function($a, $b) {
+            return $a['id'] - $b['id'];
+        });
+        return $this->rawData;
     }
 
     private function dateInRelativeWords($datatime) {

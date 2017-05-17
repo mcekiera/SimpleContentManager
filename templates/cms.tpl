@@ -11,6 +11,8 @@
 {block name=header}
     {include file="components/cms-header.tpl"}
     {include file="components/cms-images.tpl"}
+    {include file="components/cms-blog.tpl"}
+
 {/block}
 
 {block name=main}

@@ -43,21 +43,8 @@ switch($_SERVER['REQUEST_METHOD'])
     case 'POST':
         if($_POST['action' == "update"]) {
             $response = $gallery->update($_POST['id'], $_POST['alt'], $_POST['path'], $_POST['file'], $_POST['ext']);
-            var_dump($response);
-            if ($response) {
-                echo 'Data inserted to database.';
-            } else {
-                echo 'Database error, request failed.';
-            }
         } elseif ($_POST['action'] == 'insert') {
-
             $response = $gallery->insert($_POST['alt'], $_POST['path'], $_POST['file'], $_POST['ext']);
-            var_dump($response);
-            if ($response) {
-                echo 'Data inserted to database.';
-            } else {
-                echo 'Database error, request failed.';
-            }
         } else {
             echo "Request unknown";
         }

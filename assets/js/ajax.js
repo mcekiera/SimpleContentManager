@@ -51,8 +51,6 @@ $(document).ready(function () {
     function addImage(dataset) {
         var img = createImage(dataset);
         img.css("opacity","0");
-        img.css("width","585px");
-        img.css("height", "368px");
         img.addClass("img-responsive");
         img.addClass("gallery__img");
         img.addClass(" col-xs-6");
@@ -76,16 +74,18 @@ $(document).ready(function () {
         var date = $("<p class='blog-entry__date'><span>" + data.day + "</span>" + data.month + "</p>");
         var title = $("<p class='blog-entry__title'>" + data.title + "</p>");
         var stamp = $("<p class='blog-entry__stamp'>By " + data.author + " - " + data.counter + "</p>");
-
         background.append(date);
         background.append(title);
         background.append(stamp);
-
         entry.append(background);
-
         return entry;
     }
 
+    /**
+     * Creates img jQuery object with provided data.
+     * @param data ulr and description of image
+     * @returns {*|jQuery|HTMLElement}
+     */
     function createImage(data) {
         return $("<img class='img-responsive col-xs-6 col-xxs-12' src='" + data.url + "' alt='" + data.alt + "'>");
     }
@@ -100,4 +100,23 @@ $(document).ready(function () {
             button.css("display","none");
         }
     }
+
+    $.ajax({
+        url: 'images.php',
+        headers: {
+            'Content-Type':'application/json'
+        },
+        method: 'POST',
+        dataType: 'json',
+        data: JSON.stringify({
+            'action': 'insert',
+            'alt': 'pic',
+            'path': 'aa/aa',
+            'file': 'file',
+            'ext': '.fgd'
+        }),
+        success: function(data){
+            console.log('succes: '+data);
+        }
+    });
 });

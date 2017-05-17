@@ -18,7 +18,7 @@
             </div>
         </div>
     </div>
-    <div id="js-gallery-container" class="row">
+    <div id="js-gallery-container" class="row content-container">
 
         {if $gallery|count > 3 }
             {foreach array_slice($gallery, 3, 2) as $img}

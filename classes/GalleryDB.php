@@ -3,14 +3,16 @@
 class GalleryDB
 {
     private $data = [];
+    private $rawData = [];
+    private $mysql;
 
     function __construct()
     {
-        $mysql = new MySQL();
+        $this->mysql = new MySQL();
         $query = 'SELECT * FROM gallery';
-        $result = $mysql->query($query);
+        $this->rawData = $this->mysql->query($query);
 
-        foreach($result as $row) {
+        foreach($this->rawData as $row) {
             $this->data[] = array(
                 'id' => $row['id'],
                 'url' => $row['path'].$row['file'].$row['ext'],
@@ -19,8 +21,22 @@ class GalleryDB
         }
     }
 
+    function insert($alt, $path, $file, $ext) {
+        $sql = "INSERT INTO gallery VALUES (null, '#{$alt}', '#{$path}', '#{$file}', '#{$ext}')";
+        return $this->mysql->query($sql);
+    }
+
+    function update($id, $alt, $path, $file, $ext) {
+        $sql = "UPDATE VALUES SET alt='#{$alt}', path='#{$path}', file='#{$file}', ext='#{$ext}' WHERE id=#{$id}";
+        return $this->mysql->query($sql);
+    }
+
     function getData() {
         return $this->data;
+    }
+
+    function getRawData() {
+        return $this->rawData;
     }
 
 }

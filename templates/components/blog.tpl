@@ -6,7 +6,7 @@
                 <p>{$sections[6]['content']}</p>
             </div>
             <div class="col-xs-12">
-                <div id="js-blog-container" class="row">
+                <div id="js-blog-container" class="row  content-container">
 
                     {foreach $blog as $item}
                         {include file='components/blog-entry.tpl' entry=$item}

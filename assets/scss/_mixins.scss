@@ -15,3 +15,7 @@
   	 -moz-animation: $params;
   		  animation: $params;
 }
+@mixin transition($params) {
+	-webkit-transition: $params;
+			transition: $params;
+}

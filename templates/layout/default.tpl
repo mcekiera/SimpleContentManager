@@ -7,7 +7,6 @@
     {block name=title}{/block}
     {block name=css}{/block}
 
-    <link rel="stylesheet" href="assets/css/style.min.css">
 </head>
 <body>
 

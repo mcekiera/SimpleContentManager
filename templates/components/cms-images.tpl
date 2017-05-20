@@ -15,25 +15,25 @@
         <tbody>
         {foreach $gallery as $image}
             <tr>
-                <th>{$image['id']}</th>
-                <th><input id="cms-img-desc-{$image['id']}" title="Description" type="datetime" value="{$image['alt']}"></th>
-                <th><input id="cms-img-path-{$image['id']}" title="Path to directory" type="datetime" value="{$image['path']}"></th>
-                <th><input id="cms-img-file-{$image['id']}" title="File name" type="datetime" value="{$image['file']}"></th>
-                <th><input id="cms-img-ext-{$image['id']}" title="File extension" type="datetime" value="{$image['ext']}"></th>
-                <th><img class="cms-img__image img-responsive" src="{$image['path']}{$image['file']}{$image['ext']}"></th>
-                <th><button class="cms-img-update" type="submit" data-id='{$image['id']}'>Update</button> </th>
-                <th><button class="cms-img-delete" type="submit" data-id='{$image['id']}'>Delete</button> </th>
+                <td>{$image['id']}</td>
+                <td><input id="cms-img-desc-{$image['id']}" title="Description" type="datetime" value="{$image['alt']}"></td>
+                <td><input id="cms-img-path-{$image['id']}" title="Path to directory" type="text" value="{$image['path']}"></td>
+                <td><input id="cms-img-file-{$image['id']}" title="File name" type="text" value="{$image['file']}"></td>
+                <td><input id="cms-img-ext-{$image['id']}" title="File extension" type="text" value="{$image['ext']}"></td>
+                <td><img class="cms-img__image img-responsive" src="{$image['path']}{$image['file']}{$image['ext']}"></td>
+                <td><button class="cms-img-update" type="submit" data-id='{$image['id']}'>Update</button> </td>
+                <td><button class="cms-img-delete" type="submit" data-id='{$image['id']}'>Delete</button> </td>
             </tr>
         {/foreach}
         <tr>
-            <th>NEW</th>
-            <th><input id="cms-img-desc" title="Description" type="datetime" placeholder="Value for alt attr"></th>
-            <th><input id="cms-img-path" title="Path to directory" type="datetime" placeholder="Path to directory"></th>
-            <th><input id="cms-img-file" title="File name" type="datetime" placeholder="File name"></th>
-            <th><input id="cms-img-ext" title="File extension" type="datetime" placeholder="File extension"></th>
-            <th><button id="cms-img-add" type="submit"'>ADD</button></th>
-            <th><button id="cms-img-clear" type="submit"'>CLEAR</button></th>
-            <th></th>
+            <td>NEW</td>
+            <td><input id="cms-img-desc" title="Description" type="text" placeholder="Value for alt attr"></td>
+            <td><input id="cms-img-path" title="Path to directory" type="text" placeholder="Path to directory"></td>
+            <td><input id="cms-img-file" title="File name" type="text" placeholder="File name"></td>
+            <td><input id="cms-img-ext" title="File extension" type="text" placeholder="File extension"></td>
+            <td><button id="cms-img-add" type="submit"'>ADD</button></td>
+            <td><button id="cms-img-clear" type="submit"'>CLEAR</button></td>
+            <td></td>
         </tr>
         </tbody>
     </table>

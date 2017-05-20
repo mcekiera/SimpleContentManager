@@ -16,6 +16,7 @@
 {block name=main}
     {include file="components/cms-images.tpl"}
     {include file="components/cms-blog.tpl"}
+    {include file="components/cms-content.tpl"}
     {include file="components/cms-main.tpl"}
 {/block}
 

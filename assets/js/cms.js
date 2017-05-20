@@ -7,7 +7,7 @@
             title: $("#cms-sec-title").val(),
             domid: $("#cms-sec-domid").val(),
             menu: $("#cms-sec-menu").val(),
-            content: $("#cms-sec-content").text()
+            content: $("#cms-sec-content").val()
         };
 
         request('content','POST', data, location.reload)
@@ -85,7 +85,51 @@
         request('images','POST', data)
     }
 
-    function request(target, type, data, success) {
+    function insertArticle() {
+        var data = {
+            action: 'INSERT',
+            timestamp: $("#cms-blog-timestamp").val(),
+            author: $("#cms-blog-author").val(),
+            title: $("#cms-blog-title").val(),
+            img: $("#cms-blog-img").val(),
+            content: $("#cms-blog-content").val()
+        };
+
+        request('articles','POST', data, location.reload)
+    }
+
+    function clearArticle() {
+        $("#cms-blog-timestamp").val('');
+        $("#cms-blog-author").val('');
+        $("#cms-blog-title").val('');
+        $("#cms-blog-img").val('');
+        $("#cms-blog-content").val('');
+    }
+
+    function updateArticle(id) {
+        var data = {
+            action: 'UPDATE',
+            id: id,
+            timestamp: $("#cms-blog-timestamp-" + id).val(),
+            author: $("#cms-blog-author-" + id).val(),
+            title: $("#cms-blog-title-" + id).val(),
+            img: $("#cms-blog-img-" + id).val(),
+            content: $("#cms-blog-content-" + id).val()
+        };
+
+        request('articles','POST', data, location.reload)
+    }
+
+    function deleteArticle(id) {
+        var data = {
+            action: 'DELETE',
+            id: parseInt(id,10)
+        };
+
+        request('articles','POST', data)
+    }
+
+    function request(target, type, data) {
         console.log('id: ' + data.id);
         $.ajax({
             url: target + '.php',
@@ -96,7 +140,7 @@
             dataType: 'json',
             data: JSON.stringify(data),
         });
-        // location.reload();
+        location.reload();
     }
 
     $(".cms-img-delete").click(function () {
@@ -130,6 +174,22 @@
 
     $("#cms-sec-clear").click(function () {
         clearContent();
+    });
+
+    $(".cms-blog-delete").click(function () {
+        deleteArticle($(this).data('id'));
+    });
+
+    $(".cms-blog-update").click(function () {
+        updateArticle($(this).data('id'));
+    });
+
+    $("#cms-blog-add").click(function () {
+        insertArticle();
+    });
+
+    $("#cms-blog-clear").click(function () {
+        clearArticle();
     });
 
 

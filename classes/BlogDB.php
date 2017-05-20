@@ -5,12 +5,13 @@ class BlogDB
 {
     private $data = [];
     private $rawData = [];
+    private $mysql;
 
     function __construct()
     {
-        $mysql = new MySQL();
+        $this->mysql = new MySQL();
         $query = "SELECT * FROM blog ORDER BY timestamp DESC";
-        $this->rawData = $mysql->query($query);
+        $this->rawData = $this->mysql->query($query);
 
         foreach ($this->rawData as $row) {
             $time = strtotime($row['timestamp']);
@@ -26,6 +27,23 @@ class BlogDB
                 'counter' => $this->dateInRelativeWords($row['timestamp'])
             );
         }
+    }
+
+    function insert($timestamp, $author, $title, $img, $content ) {
+        $sql = "INSERT INTO blog VALUES (null, '{$timestamp}', '{$author}', '{$title}', '{$img}', '{$content}')";
+        $this->mysql->query($sql);
+        return $sql;
+    }
+
+    function update($id, $timestamp, $author, $title, $img, $content ) {
+        $sql = "UPDATE blog SET timestamp='{$timestamp}', author='{$author}', title='{$title}', img='{$img}', content='{$content}' WHERE id={$id}";
+        $this->mysql->query($sql);
+        return $sql;
+    }
+
+    function delete($id) {
+        $sql = "DELETE FROM blog WHERE id = {$id}";
+        return $this->mysql->query($sql);
     }
 
     function getData() {
@@ -50,7 +68,7 @@ class BlogDB
         if(intval($hours) <= 1) {
             $result = "1 hour ago";
         } elseif ($hours < 24) {
-            $result = $hours." hours ago";
+            $result = intval($hours)." hours ago";
         } elseif (intval($hours/24) == 1) {
             $result = "1 day ago";
         } elseif ($hours/24 < 7) {

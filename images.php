@@ -41,14 +41,20 @@ switch($_SERVER['REQUEST_METHOD'])
         echo json_encode($result);
         break;
     case 'POST':
-        if($_POST['action' == "update"]) {
-            $response = $gallery->update($_POST['id'], $_POST['alt'], $_POST['path'], $_POST['file'], $_POST['ext']);
-        } elseif ($_POST['action'] == 'insert') {
-            $response = $gallery->insert($_POST['alt'], $_POST['path'], $_POST['file'], $_POST['ext']);
-        } else {
-            echo "Request unknown";
+        $response = 'start';
+        switch ($_POST['action'])
+        {
+            case 'INSERT':
+                $response = $gallery->insert($_POST['alt'], $_POST['path'], $_POST['file'], $_POST['ext']);
+                break;
+            case 'UPDATE' :
+                $response = $gallery->update($_POST['id'], $_POST['alt'], $_POST['path'], $_POST['file'], $_POST['ext']);
+                break;
+            case 'DELETE':
+                $response = $gallery->delete($_POST['id']);
+                break;
         }
-
+        echo $response;
         break;
     default:
         echo "Unknown request.";

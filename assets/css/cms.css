@@ -1,0 +1,9 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.cms-img__image {
+  max-width: 100px; }
+
+/*# sourceMappingURL=cms.css.map */

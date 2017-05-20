@@ -22,12 +22,18 @@ class GalleryDB
     }
 
     function insert($alt, $path, $file, $ext) {
-        $sql = "INSERT INTO gallery VALUES (null, '#{$alt}', '#{$path}', '#{$file}', '#{$ext}')";
+        $sql = "INSERT INTO gallery VALUES (null, '{$alt}', '{$path}', '{$file}', '{$ext}')";
         return $this->mysql->query($sql);
     }
 
     function update($id, $alt, $path, $file, $ext) {
-        $sql = "UPDATE VALUES SET alt='#{$alt}', path='#{$path}', file='#{$file}', ext='#{$ext}' WHERE id=#{$id}";
+        $sql = "UPDATE gallery SET alt='{$alt}', path='{$path}', file='{$file}', ext='{$ext}' WHERE id={$id}";
+        $this->mysql->query($sql);
+        return $sql;
+    }
+
+    function delete($id) {
+        $sql = "DELETE FROM gallery WHERE id = {$id}";
         return $this->mysql->query($sql);
     }
 

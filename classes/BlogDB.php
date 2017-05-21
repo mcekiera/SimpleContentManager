@@ -19,6 +19,7 @@ class BlogDB
             $day = date("d", $time);
 
             $this->data[] = array(
+                "id" => $row["id"],
                 "title" => $row["title"],
                 "author" => $row["author"],
                 "img" => $row["img"],
@@ -47,7 +48,7 @@ class BlogDB
         $t = $this->mysql->escape($title);
         $i = $this->mysql->escape($img);
         $c = $this->mysql->escape($content);
-        
+
         $sql = "UPDATE blog SET timestamp='{$ts}', author='{$a}', title='{$t}', img='{$i}', content='{$c}' WHERE id={$id}";
         $this->mysql->query($sql);
         return $sql;
@@ -64,7 +65,7 @@ class BlogDB
 
     function getArticle($id) {
         $sql = "SELECT * FROM blog WHERE id={$id}";
-        $this->mysql->query($sql);
+        return $this->mysql->query($sql);
     }
 
     function getRawData() {

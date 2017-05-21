@@ -9,8 +9,6 @@ include('classes/BlogDB.php');
 
 $smarty = new Smarty;
 
-
-
 $sections = new SectionDB();
 $gallery = new GalleryDB();
 $blog = new BlogDB();

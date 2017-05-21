@@ -33,6 +33,10 @@ class MySQL
         return $rows;
     }
 
+    function escape($text) {
+        return $this->connect()->real_escape_string($text);
+    }
+
     private function connect()
     {
         $conn = new mysqli($this->servername, $this->username, $this->password, $this->database);

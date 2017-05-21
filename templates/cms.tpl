@@ -10,13 +10,13 @@
 {/block}
 
 {block name=header}
-    {include file="components/cms-header.tpl"}
+    {include file="components/cms-menu.tpl"}
 {/block}
 
 {block name=main}
     {if isset($site)}
         {include file="components/cms-{$site}.tpl"}
-        <a class="cms__back" href="cms.php">BACK</a>
+        <a class="cms__back" href="cms.php"><button class="btn btn-default btn-lg">Back</button></a>
     {else}
         {include file="components/cms-main.tpl"}
     {/if}

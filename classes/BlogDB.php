@@ -14,29 +14,41 @@ class BlogDB
         $this->rawData = $this->mysql->query($query);
 
         foreach ($this->rawData as $row) {
-            $time = strtotime($row['timestamp']);
+            $time = strtotime($row["timestamp"]);
             $month = date("M",$time);
-            $day = date('d', $time);
+            $day = date("d", $time);
 
             $this->data[] = array(
-                'title' => $row['title'],
-                'author' => $row['author'],
-                'img' => $row['img'],
-                'day' => $day,
-                'month' => $month,
-                'counter' => $this->dateInRelativeWords($row['timestamp'])
+                "title" => $row["title"],
+                "author" => $row["author"],
+                "img" => $row["img"],
+                "day" => $day,
+                "month" => $month,
+                "counter" => $this->dateInRelativeWords($row["timestamp"])
             );
         }
     }
 
     function insert($timestamp, $author, $title, $img, $content ) {
-        $sql = "INSERT INTO blog VALUES (null, '{$timestamp}', '{$author}', '{$title}', '{$img}', '{$content}')";
+        $ts = $this->mysql->escape($timestamp);
+        $a = $this->mysql->escape($author);
+        $t = $this->mysql->escape($title);
+        $i = $this->mysql->escape($img);
+        $c = $this->mysql->escape($content);
+
+        $sql = "INSERT INTO blog VALUES (null, '{$ts}', '{$a}', '{$t}', '{$i}', '{$c}')";
         $this->mysql->query($sql);
         return $sql;
     }
 
     function update($id, $timestamp, $author, $title, $img, $content ) {
-        $sql = "UPDATE blog SET timestamp='{$timestamp}', author='{$author}', title='{$title}', img='{$img}', content='{$content}' WHERE id={$id}";
+        $ts = $this->mysql->escape($timestamp);
+        $a = $this->mysql->escape($author);
+        $t = $this->mysql->escape($title);
+        $i = $this->mysql->escape($img);
+        $c = $this->mysql->escape($content);
+        
+        $sql = "UPDATE blog SET timestamp='{$ts}', author='{$a}', title='{$t}', img='{$i}', content='{$c}' WHERE id={$id}";
         $this->mysql->query($sql);
         return $sql;
     }
@@ -57,7 +69,7 @@ class BlogDB
 
     function getRawData() {
         usort($this->rawData, function($a, $b) {
-            return $a['id'] - $b['id'];
+            return $a["id"] - $b["id"];
         });
         return $this->rawData;
     }
@@ -69,7 +81,7 @@ class BlogDB
     }
 
     private function hoursToSentence($hours) {
-        $result = '';
+        $result = "";
         if(intval($hours) <= 1) {
             $result = "1 hour ago";
         } elseif ($hours < 24) {

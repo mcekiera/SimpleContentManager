@@ -1,9 +1,52 @@
-* {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+@import "fonts";
+
+body {
+  margin-top: 55px;
+}
+
+table {
+  max-width: 100%;
 }
 
 .cms-img__image {
   max-width: 100px;
+}
+
+.caution {
+  color: rgb(255,0,0);
+  font-size: 20px;
+}
+
+.logo {
+  font-family: 'Pacifico-Original', 'Pacifico', fantasy;
+  text-decoration: none;
+  text-transform: capitalize;
+
+  &:hover,
+  &:active,
+  &:visited,
+  &:focus {
+    text-decoration: none;
+  }
+
+  &--lg {
+    color: #000;
+    font-size: 3.5em;
+
+    &:hover, &:active, &:visited, &:focus {
+      color: #000;
+    }
+  }
+
+  &--sm {
+    color: #B9B9B9;
+    font-size: 1.5em;
+
+    &:hover,
+    &:active,
+    &:visited,
+    &:focus {
+      color: #B9B9B9;
+    }
+  }
 }

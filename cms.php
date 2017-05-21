@@ -21,7 +21,6 @@ $smarty->setCacheDir('cache');
 $smarty->setConfigDir('configs');
 
 $site = [$_GET['site']];
-var_dump($site);
 
 $smarty->assign('sections', $sections->getData());
 $smarty->assign('gallery', $gallery->getRawData());

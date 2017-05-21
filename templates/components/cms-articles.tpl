@@ -1,18 +1,18 @@
 <div class="cms-blog">
-    <table class="cms-img__table table table-striped table-hover table-responsive">
+    <table class="table table-striped table-hover table-responsive table-condensed">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Timestamp</th>
+                <th>Author</th>
+                <th>Title</th>
+                <th>Content</th>
+                <th>Image path</th>
+                <th>Picture</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
         <tbody>
-        <tr>
-            <th>No.</th>
-            <th>Timestamp</th>
-            <th>Author</th>
-            <th>Title</th>
-            <th>Content</th>
-            <th>Image</th>
-            <th>Pic</th>
-            <th>Delete</th>
-        </tr>
-
-
         {foreach $blog as $article}
             <tr>
                 <td>{$article['id']}</td>

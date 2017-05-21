@@ -50,6 +50,11 @@ class BlogDB
         return $this->data;
     }
 
+    function getArticle($id) {
+        $sql = "SELECT * FROM blog WHERE id={$id}";
+        $this->mysql->query($sql);
+    }
+
     function getRawData() {
         usort($this->rawData, function($a, $b) {
             return $a['id'] - $b['id'];

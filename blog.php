@@ -10,10 +10,7 @@ $smarty = new Smarty;
 $blog = new BlogDB();
 
 $id = [$_GET['id']];
-var_dump($id);
 $article = $blog->getArticle(intval($id[0]));
-
-var_dump($article);
 
 $smarty->assign('article', $article[0]);
 $smarty->display('templates/blog.tpl');

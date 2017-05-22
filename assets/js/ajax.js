@@ -101,45 +101,23 @@ $(document).ready(function () {
         }
     }
 
-    // $("#js-update-blog").click(function () {
-    //     $.ajax({
-    //         url: 'blog.php',
-    //         headers: {
-    //             'Content-Type':'application/json'
-    //         },
-    //         method: 'POST',
-    //         dataType: 'json',
-    //         data: JSON.stringify({
-    //             'action': 'update',
-    //             'id': $("#js-update-blog-id").text(),
-    //             'author': $("#js-update-blog-author").text(),
-    //             'timestamp': $("#js-update-blog-timestamp").text(),
-    //             'img': $("#js-update-blog-img").text(),
-    //             'content': $("#js-update-blog-content").text(),
-    //             'title': $("#js-update-blog-title").text()
-    //         }),
-    //         success: function(data){
-    //             console.log('succes: '+data);
-    //         }
-    //     });
-    // });
+    $("#js-button-subscribe").click(function () {
+        $.ajax({
+            url: 'subscribe.php',
+            headers: {
+                'Content-Type':'application/json'
+            },
+            method: 'POST',
+            dataType: 'json',
+            data: JSON.stringify({
+                'action': 'SUBSCRIBE',
+                'email': $("#js-input-subscribe").val()
+            }),
+            success: function(data){
+                // console.log('succes: ' + data);
+            }
+        });
+    });
 
-    // $.ajax({
-    //     url: 'images.php',
-    //     headers: {
-    //         'Content-Type':'application/json'
-    //     },
-    //     method: 'POST',
-    //     dataType: 'json',
-    //     data: JSON.stringify({
-    //         'action': 'insert',
-    //         'alt': 'pic',
-    //         'path': 'aa/aa',
-    //         'file': 'file',
-    //         'ext': '.fgd'
-    //     }),
-    //     success: function(data){
-    //         console.log('succes: '+data);
-    //     }
-    // });
+
 });

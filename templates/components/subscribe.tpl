@@ -11,9 +11,9 @@
                         <div class="row">
                             <label for="input-subscribe"><span class="hidden">Your email address</span></label>
                             <span class="col-sm-9 col-xs-12">
-                    <input id="input-subscribe" type="email" placeholder="Your email address" class="sub-form__input">
+                    <input id="js-input-subscribe" type="email" placeholder="Your email address" class="sub-form__input">
                   </span>
-                            <span class="col-sm-3"><button type="submit" class="sec__button sec__button--form">Subscribe</button></span>
+                            <span class="col-sm-3"><button id="js-button-subscribe" type="submit" class="sec__button sec__button--form">Subscribe</button></span>
                         </div>
                     </form>
                 </div>

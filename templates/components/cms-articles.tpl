@@ -15,7 +15,7 @@
         <tbody>
         {foreach $blog as $article}
             <tr>
-                <td>{$article['id']}</td>
+                <td><a href="/cahee/blog.php?id={$article['id']}">{$article['id']}</a></td>
                 <td><input id="cms-blog-timestamp-{$article['id']}" title="Timestamp" type="datetime" value="{$article['timestamp']}"></td>
                 <td><input id="cms-blog-author-{$article['id']}" title="Author" type="text" value="{$article['author']}"></td>
                 <td><input id="cms-blog-title-{$article['id']}" title="Title" type="text" value="{$article['title']}"></td>

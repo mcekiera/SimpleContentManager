@@ -2,3 +2,4 @@ Options +FollowSymLinks
 DirectoryIndex index.html index.php
 RewriteEngine On
 RewriteRule ^blog/(\d+) blog.php?id=$1
+RewriteRule ^(blog|cms|index)$ $1.php

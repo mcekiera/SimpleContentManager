@@ -1,4 +1,4 @@
-<section id="{$sections[5]['domid']}" class="container-fluid subscribe sec" style="background-image: url('assets/img/b04.png')">
+<section id="{$sections[5]['domid']}" class="container-fluid subscribe sec" style="background-image: url('/cahee/assets/img/b04.png')">
     <div class="container">
         <div class="row">
             <div class="sec__content col-sm-8">

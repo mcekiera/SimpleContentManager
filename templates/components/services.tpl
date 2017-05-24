@@ -4,7 +4,7 @@
             <div class="col-sm-6 col-sm-push-6">
                 <div class="sec__box">
                     <h1 class="sec__title sec__content--white">{$sections[3]['title']}</h1>
-                    <img class="img-responsive services__img" src="assets/img/b03.png" alt="tomato pieces">
+                    <img class="img-responsive services__img" src="/cahee/assets/img/b03.png" alt="tomato pieces">
                 </div>
             </div>
             <div class="col-sm-6 col-sm-pull-6">

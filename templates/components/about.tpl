@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-5 col-md-6">
-                <img class="img-responsive about__img" src="assets/img/b02.png" alt="strawberries bowl pic">
+                <img class="img-responsive about__img" src="/cahee/assets/img/b02.png" alt="strawberries bowl pic">
             </div>
             <div class="col-sm-7 col-md-5 col-md-offset-1">
                 <div class="sec__content sec__content--white">

@@ -6,7 +6,7 @@
 
 {block name=css}
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link type="text/css" rel="stylesheet" href="assets/css/cms.css">
+    <link type="text/css" rel="stylesheet" href="/cahee/assets/css/cms.css">
 {/block}
 
 {block name=header}
@@ -23,8 +23,8 @@
 {/block}
 
 {block name=scripts}
-    <script src="libs/jquery-3.2.1.js"></script>
-    <script src="assets/js/cms.js"></script>
+    <script src="/cahee/libs/jquery-3.2.1.js"></script>
+    <script src="/cahee/assets/js/cms.js"></script>
 {/block}
 
 

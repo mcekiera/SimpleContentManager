@@ -1,4 +1,4 @@
-<section id="{$sections[7]['domid']}" class="container-fluid contact sec" style="background-image: url('assets/img/bg-bottom.png')">
+<section id="{$sections[7]['domid']}" class="container-fluid contact sec" style="background-image: url('/cahee/assets/img/bg-bottom.png')">
     <div class="container">
         <div class="row">
             <div class="sec__content col-sm-6 col-sm-offset-3">

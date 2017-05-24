@@ -7,7 +7,7 @@
 {block name=css}
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Pacifico|Raleway:200,400,500,600,700,900" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.min.css">
+    <link rel="stylesheet" href="/cahee/assets/css/style.min.css">
 {/block}
 
 {block name=header}
@@ -29,7 +29,7 @@
 {/block}
 
 {block name=scripts}
-    <script src="libs/jquery-3.2.1.js"></script>
+    <script src="/cahee/libs/jquery-3.2.1.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="assets/js/ajax.js"></script>
+    <script src="/cahee/assets/js/ajax.js"></script>
 {/block}

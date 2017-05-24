@@ -1,7 +1,7 @@
 {extends file='layout/default.tpl'}
 {block name=css}
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link type="text/css" rel="stylesheet" href="assets/css/style.css">
+    <link type="text/css" rel="stylesheet" href="/cahee/assets/css/style.css">
 {/block}
 
 {block name=main}
@@ -23,6 +23,6 @@
 {/block}
 
 {block name=scripts}
-    <script src="libs/jquery-3.2.1.js"></script>
-    <script src="assets/js/cms.js"></script>
+    <script src="/cahee/libs/jquery-3.2.1.js"></script>
+    <script src="/cahee/assets/js/cms.js"></script>
 {/block}

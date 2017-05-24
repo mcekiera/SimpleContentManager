@@ -9,11 +9,11 @@ class MySQL
 
     function __construct()
     {
-        global $config;
-        $this->serverName = $config['db']['host'];
-        $this->username = $config['db']['user'];
-        $this->password = $config['db']['password'];
-        $this->database = $config['db']['name'];
+        global $db;
+        $this->serverName = $db['host'];
+        $this->username = $db['user'];
+        $this->password = $db['password'];
+        $this->database = $db['name'];
     }
 
     function query($sql)

@@ -18,7 +18,7 @@ class Subscribtion
     }
 
     function unsubscribe($email) {
-        $sql = "DELETE FROM section WHERE email={$email}";
+        $sql = "DELETE FROM subscribe WHERE email='{$email}'";
         return $this->mysql->query($sql);
     }
 }

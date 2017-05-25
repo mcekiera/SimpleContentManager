@@ -2,6 +2,7 @@
 
 include('libs/smarty-3.1.30/libs/Smarty.class.php');
 include('config.php');
+include('db.php');
 include ('classes/MySQL.php');
 include('classes/BlogDB.php');
 

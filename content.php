@@ -1,5 +1,6 @@
 <?php
 include('config.php');
+include('db.php');
 include('classes/MySQL.php');
 include('classes/SectionDB.php');
 

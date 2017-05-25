@@ -2,7 +2,7 @@
 
 include('libs/smarty-3.1.30/libs/Smarty.class.php');
 include('config.php');
-include('db_credentials.php');
+include('db.php');
 include('classes/MySQL.php');
 include('classes/SectionDB.php');
 include('classes/GalleryDB.php');
@@ -19,7 +19,6 @@ $smarty->setCompileDir('templates_c');
 $smarty->setCacheDir('cache');
 $smarty->setConfigDir('configs');
 
-$smarty->assign('CONFIG', $config);
 $smarty->assign('sections', $sections->getData());
 $smarty->assign('gallery', $gallery->getData());
 $smarty->assign('blog', array_slice($blog->getData(),0,3));
